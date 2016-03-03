@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="QuizzingProgram">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">        
+        
+        <title>Quiz Program</title>        
+        
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    </head>
+    <body>
+        <div class="jumbotron">
+            <h1>Quiz Program</h1>
+            <p>Quizzing program selects random students and random questions.</p>
+        </div>  
+    
+        <div class="container">
+            <div ng-controller="QuizController as qc">
+                <!--<button type="button" class="btn btn-lg btn-default" ng-show="qc.show_next" ng-click="qc.getNext()">Next Student</button><br/>-->
+                <p><span class="label label-default">student:</span> {{qc.selected_student.name}} - 
+                correct: {{qc.selected_student.correct}} - incorrect: {{qc.selected_student.incorrect}}</p>
+                <p><span class="label label-default">question:</span> {{qc.selected_question.text}}</p>
+                <p><span class="label label-default">answer:</span> {{qc.selected_question.answer}}</p>
+                <button type="button" class="btn btn-success" ng-click="qc.doCorrect()">Correct</button>
+                <button type="button" class="btn btn-danger" ng-click="qc.doIncorrect()">Incorrect</button>
+            </div>
+        </div>
+        <script src = "angular.min.js" ></script>
+        <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script> -->                
+        <script src="MyGenerate.js"></script>
+    </body>
+</html>

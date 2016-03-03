@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="QuizzingProgram">
+    
+<head>
+    <title>QuizProgram</title>
+    <script src = "angular.min.js" ></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.17/angular.min.js"></script> -->
+    <script type="text/javascript" src="MyGenerate.js"></script>
+    
+    
+    
+</head>
+
+<body>
+
+    <div ng-controller="QuizController as qc">
+
+        <!--<button type="button" ng-click="qc.GenerateStudent()"> Choose Student</button>
+        <button type="button" ng-click="qc.GenerateQuestion()"> Generate Question</button> -->
+        
+        <p> 
+        Display Student name and question here: <br>
+        The Student is : {{qc.selected_student.name}} <br>
+        The number correct: {{qc.selected_student.correct}}<br>
+        The number inccorect: {{qc.selected_student.incorrect}}<br>
+        The quesiton is:{{qc.selected_question.text}} <br>
+        </p>
+  
+        
+        <!--<button type="button" ng-click="qc.DisplayAnswer()"> Display Answer</button> -->
+
+        <p>
+            Display the answer here:
+            {{qc.selected_question.answer}}
+        </p>
+        
+        <button type="button" class="btn btn-success" ng-click="qpc.doCorrect()">Correct</button>
+        <button type="button" class="btn btn-danger" ng-click="qpc.doIncorrect()">Incorrect</button>
+            
+        
+        
+    </div>
+</body>
+
+
+</html>
